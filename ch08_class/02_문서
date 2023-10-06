@@ -1,0 +1,21 @@
+String 클래스
+
+	1. substring(int beginindex)
+	   : 현재 문자열 객체에서 beginindex 위치 부터 끝까지 문자열 발췌
+	 ex) String str="Good After-noon Gil-dong";
+	 		//		 012345678901234567890123
+	 				 
+	 	String s1=str.substring(16);//gil-dong
+	 
+	 	substring(beginindex, int endindex)
+	 :  현재 문자열 객체에서 beginindex 위치부터 endindex의 직전까지 문자열 발췌
+	 
+	 :  String s2=str.substring(5,10);//After
+	 
+	응용:  991010-125510
+	// 	  0123456789012
+	
+		String ctz="991010-125510";
+		// 	                0123456789012
+		
+		String j=ctz=.substring(7,8);

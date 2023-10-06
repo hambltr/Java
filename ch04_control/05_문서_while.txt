@@ -1,0 +1,16 @@
+while문 형식
+	
+	while(조건){
+		조건이 참일 때 처리할 내용 ;
+	}
+
+
+do~while 형식
+	do{
+		처리내용;
+	}while(조건);   // 여기에만 ; 들어감
+
+
+Test17while.txt
+
+

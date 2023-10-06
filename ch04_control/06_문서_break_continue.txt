@@ -1,0 +1,12 @@
+break문
+	switch~case 블럭 탈출
+	
+	반복문: for 블럭 탈출
+		  while 블럭 탈출
+		  
+Test20Break.java
+
+continue문
+	반복 loop의 끝을 만난 것과 같다.(즉 다시 반복)
+	
+Test21Continue.java

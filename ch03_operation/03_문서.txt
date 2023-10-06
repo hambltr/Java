@@ -1,0 +1,35 @@
+기본자료형 비교연산
+	== : a가 b와 같은지 비교 ex) a==b
+
+문자열 비교연산
+	equals() : 대소문자 구분하여 비교
+	equalsIgnoreCase() : 대소문자 구분하지 않고 비교
+
+	
+Test07.java
+
+객체 비교 연산자
+	객체 instanceof 클래스
+	if(객체 instanceof 클래스){
+	}
+	
+	ex) 
+	String str2=new String("abc");//객체생성
+	Object obj=new Object();//객체생성, >> Object는 자바 내 최상위 클래스
+	System.out.println(str2 instanceof String);//true
+	System.out.println(str2 instanceof Object);//true : 클래스가 상위라면 true
+	System.out.println(obj instanceof Object);//true
+	System.out.println(obj instanceof String);//false : 클래스가 하위라면 false
+	
+	true false 값을 받아내는 게 아닌 잘 상속 되었는지 체크하려는 의도에서 사용함
+	
+	
+	
+문자열 비교연산
+	equals() : 대소문자 구분하여 비교
+	equalsIgnoreCase() : 대소문자 구분하지 않고 비교
+	
+	String str="hello";
+	System.out.println(str.equals("hello"));//true
+	System.out.println(str.equals("Hello"));//false
+	System.out.println(str.equalsIgnoreCase("hello"));//true

@@ -1,0 +1,16 @@
+제어문 (중요)
+
+분기문
+
+	if문
+	switch~case문
+	
+반복문
+
+	for문-	-	-	-	-	최종치를 알고 있을 때 사용함
+	while문/do~while문-	-	최종치를 모를 때 사용함
+	break문   -	-	-	-	switch~case 블럭 탈출
+							반복문 블럭을 탈출 (안하면 도르마무)					
+	continue문
+	
+	

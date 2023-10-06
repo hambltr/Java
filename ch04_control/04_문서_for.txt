@@ -1,0 +1,42 @@
+for문
+	for문은 최종 값을 알 때 사용함
+	
+for문 형식1
+	for(초기값; 조건(최종값);증,감치){
+	      ①    ②    ⑤     ④ 
+	반복 처리할 내용; ③,⑥
+	}
+	
+	④ ⑤ ⑥ - 반복 수행 : 조건이 참인 경우에만 반복수행
+	
+	Test09For.java
+	
+for문 형식2 (2중 for문)
+
+for(초기치; 최종치; 증감치){ //행=row=줄=가로 :: 중요
+
+	
+	for(초기치; 최종치; 증감치){ //렬=column=칸=세로 :: 중요
+	 	처리문;
+	}//inner-for	
+	처리문;//System.out.println();
+}//out-for
+
+====================================================
+1 2 3 4  <- i=1
+1 2 3 4  <- i=2
+1 2 3 4  <- i=3
+1 2 3 4  <- i=4
+
+row=4
+cloumn=4
+
+for(int i=1; i<=4; i++){//row
+	for(int k=1; k<=4; k++){//column
+		System.out.print(k+" ");
+	}//inner-for
+		System.out.println();//개행
+		
+}out-for
+
+//Test15_for2

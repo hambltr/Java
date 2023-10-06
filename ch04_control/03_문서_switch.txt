@@ -1,0 +1,25 @@
+switch~case문 형식
+
+	switch(변수 or 수식){
+		case 값1:(콜론 사용, 세미 콜론x)
+			처리문;
+			처리문;
+			break; //switch 단 탈출
+			
+		case 값2:(콜론)
+			처리문;
+			처리문;
+			break; //switch 단 탈출
+			
+		case 값3:(콜론)
+			처리문;
+			처리문;
+			break; //switch 단 탈출
+			
+		default:(콜론)
+		//상단 처리문에서 해당사항이 없을 경우 사용
+		처리문; (default에는 break문 안써도됨, 근데 쓰고싶으면 쓰던가)	
+			
+	}//switch-end
+	
+	Test04Switch.java

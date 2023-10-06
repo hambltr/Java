@@ -1,0 +1,19 @@
+메서드 형식
+
+접근제한자
+	
+	[static] 리턴형 메서드이름(매개변수,,,){
+		처리내용;
+	}
+	
+	public static void main(String args[]){}
+	
+	: 메인 메서드는 손댈 수 없음
+	
+	pubic void aa();
+	
+	pubic int bb(int a, int b){
+		return 정수;
+	}
+	
+	

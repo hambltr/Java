@@ -1,0 +1,55 @@
+1. 인터페이스의 메서드는 모드 추상 메서드이다. 
+	: 메서드 내용이 없는것 = 추상 메서드
+  ex) public void aa();
+  
+2. 인터페이스 메서드 접근제한자는 public이다. 
+	: 생략해도 public 이다.
+	
+3. 인터페이스의 변수는 항상 static final 이다.
+	: 생략해도 static final 이다.
+	: static final 변수의 값은 절대 변경 불가능
+	
+4. 인터페이스는 다중 상속된다.
+	: 클래스는 다중 상속 불가
+	
+	클 extends 클
+	인 extends 인,인,인 (다중 상속 가능)
+	클 implements 인,인,인 (다중 상속 가능)
+	
+5. 인터페이스 정의 형식
+	interface 인터페이스 이름{
+		static final 자료형 변수; 	(static final)
+		자료형 변수;			  	(static final) // 값 변경 불가
+		
+		public 리턴형 메서드이름();
+		public 리턴형 메서드이름();
+		public 리턴형 메서드이름(); // public 접근제한자는 생략해도 public
+		
+	}	
+6. 인터페이스는 클래스에서 상속받아 오버라이딩을 해야한다. (반드시)
+
+  ex) class 클래스이름 implements 인터페이스 이름{
+ 	 	public 리턴형 메서드이름(){처리내용;} //오버라이딩
+  		public 리턴형 메서드이름(){처리내용;}
+ 	 	public 리턴형 메서드이름(){처리내용;}
+  	}
+  	
+  	
+  	//인터넷 검색 DTO, VO, DAO
+  	BoardDto.java 모델빈
+  	BoardDao.java 인터페이스 (메뉴판에 비유)
+  	BoardDaoImpl.java 구현 클래스 (인터페이스를 상속 받아서 구현한 클래스를 말함)
+  	
+  	Test01interface.java
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
