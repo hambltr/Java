@@ -1,0 +1,23 @@
+메서드() throws 예외이름: 메서드를 호출한 그 곳으로 제어권을 넘긴다
+throw new 예외클래스 이름(); //예외생성
+
+new Test01();//객체생성
+throw new test01();//예외 생성
+throw new JumsuException();//예외 생성
+
+===========================================
+
+class ExceptionTest{
+	if(JumsuException발생 조건){
+		throw new JumsuException("메세지");//예외 생성
+	}
+}
+
+===========================================
+class JumsuException extends Exception{
+
+//생성자
+public JumsuException(String msg){
+	super(msg);// 상위 클래스 생성자 호출
+	}
+}

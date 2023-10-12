@@ -1,0 +1,84 @@
+1. Generic(제너릭)
+
+	Generic 기능은 Collection(Vector, ArrayList..) 같은 자료구조에
+	*객체* 를 넣거나 꺼낼때 형변환을 잘 못 했을 경우 ClassCastException 예외를
+	*컴파일* 할 때 찾기위한 기능이 제너릭이다
+	
+	제너릭타입 <자료형> 자로형만 선언해주면 객체를 저장할 때
+	선언된 제너릭 타입으로만 저장된다
+	
+	예를들어
+	Vector<String> nec=new Vector<String>(); : String 자료형만 넣을 수 있다.
+	Vector<BoardDTO> nec=new Vector<BoardDTO>(); :BoardDTO 자료형만 넣을 수 있다.
+
+Iterator는 모든 컬렉션 자료들을 받아서 처리 할 수 있다
+
+Collection 자료들
+	-HashTable, Vector : 스레드 기능이 있다. (동기화를 지원한다) ***면접
+	-Set, HashSet : 중복 데이터 허용 안됨 (로또,부서.. 중복x)
+	
+	-List, ArrayList: 중복 허용 된다. ArrayList는 스레드 기능 없다 
+									Vector는 스레드 기능 있다
+	
+	-Map, HashMap : HashMap은 스레드 기능이 없다, 
+					HashTable은 스레드 기능이 있다
+	
+
+Test01_Generic.java 실행 시 에러발생, 제너릭 사용하지 않음
+Test02_Generic.java 컴파일 시 에러발생, 제너릭 사용
+
+2. 단축 for (Enhanced loop)
+	단축 for는 Collection이나 배열같은 군집 데이터를 처리할 때 사용한다.
+	
+	형식
+	=====================================
+	for (파라미터:변수명(콜렉션 자료형)){
+	처리내용;
+	}
+
+* Collection 자료형의 주요 메서드들
+
+	int size(): 요소 갯수 리턴
+	
+	Vector, List, ArrayList
+	add():요소(항목) 추가
+	get():요소값 얻을때
+	
+	Map, HashMap, HashTable
+	put():요소 추가
+	get():요소값 얻을때
+	
+	=====================================
+
+
+
+
+Test03_for.java 
+Test04_List.java 중복 허용
+Test05_Set.java 중복 비허용
+Test06_Set.Lotto.java
+Test07_Vector.java
+Test08_Map.java
+Test09_HastTable.java
+
+
+//면접 문제
+//HashMap과 HashTable의 차이점을 설명하시오
+//답: HashTable - 스레드 기능이 있음 (동기화를 지원) : 쇼핑몰의 장바구니 등
+//	 HashMap   - 스레드 기능이 없음 (동기화를 지원하지 않음)
+
+
+
+
+MVC
+Model(*.java) 
+BoardDAO.java
+View(JSP)	
+Controller 
+
+
+				 ==> 			 ==> 				 ==> 
+	View(JSP) 요청	  Controller	   Model(*java)		   (DB)
+		     	 <==			 <==	        	 <==
+		     	 
+		     	 
