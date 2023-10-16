@@ -1,0 +1,126 @@
+1. MySQL 설치
+
+cmd에서 MySQL 실행
+
+mysql55\bin 경로로 이동
+
+>mysql -u root -p
+>mysql user root password
+
+Enter password : 12345
+
+mysql> ctrl + c (exit 써도 됨) : 서버 종료
+
+2. DataBase 만들기
+
+mysql> create DataBase mydb;
+mysql> create DataBase DB이름
+
+3. DataBase 사용하기
+
+> use mydb;
+
+4. table 만들기
+varchar : 문자열 (자바 String)
+
+create table test(
+id varchar(20) not null,
+pw varchar(20) not null,
+name varchar(30) not null
+);
+
+table 삭제
+drop table test;
+
+table 만들어졌는지 확인
+show tables;
+
+table 구조 확인
+desc test;
+=========================
+데이터 입력 : insert
+데이터 검색 : select ****자주씀
+데이터 수정 : update
+데이터 삭제 : delete
+
+
+데이터 입력 : insert
+
+insert into test values('kim','k123','김정은','평양');
+insert into test values('lee','l123','이효리','제주');
+insert into test values('park','p123','박문수','서울');
+insert into test values('lee2','l123','이상순','서울');
+
+데이터 검색 : select
+
+select id,name from test;
+select * from test;
+
+- order by 키필드 asc 또는 desc 
+	asc = 오름차순 : 순서대로 또는 desc = 내림차순 : 역순으로
+
+select * from test order by id asc;
+select * from test order by id desc;
+
+-이름을 오름차순으로 검색하시오
+select * from test order by name asc; #asc는 생략이 가능하다. (asc가 default값)
+select * from test order by name;
+
+-박문수 자료만 검색
+select * from test where name='박문수';
+
+-'이'만 검색하시오
+select * from test where name like '%이%';
+select * from test where name like '%이%' order by id asc;
+select * from test where name like '%이%' order by id desc;
+
+
+데이터 수정 : update
+update test set name = '이순신' where name = '이상순';
+		바꿀이름 , 	바뀔이름
+
+데이터 삭제 : delete
+-데이터 '이순신'을 삭제하시오
+delete from test where name = '이순신';
+select * from test; 
+
+table 삭제 
+show tables;
+drop table test;
+show tables;
+
+DB (DataBase) 삭제 
+drop database mydb;
+
+
+문제
+table 이름 : test2 
+문자열 : varchar
+필드명 (커럼명) id(20), name(30), tel(14)
+
+primary key : 유일한 값 (주민번호, id, 학번, 사원번호)
+auto_increment : 일련번호를 자동 증가하여 입력되게 한다
+==========================================
+create table board(
+num int not null auto_increment primary key, #글번호
+writer varchar(30) not null, #글쓴이
+subject varchar(50) not null, #글제목
+wdate date #게시날짜
+);
+
+-----------
+show tables;
+desc board;
+-----------
+
+insert into board (writer,subject,wdate)
+values('이순신','이순신 글',NOW());
+
+insert into board (writer,subject,wdate)
+values('박문수','박문수 글',NOW());
+
+insert into board (writer,subject,wdate)
+values('도미노','도미노 글',NOW());
+
+회원관리 DB작성
+

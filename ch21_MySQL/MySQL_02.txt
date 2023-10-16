@@ -1,0 +1,200 @@
+■. MySQL 실행
+cmd창에서 MySQL 실행
+
+C:\>cd MySQL55\bin
+C:\MySQL55\bin>
+
+C:\MySQL55\bin>mysql -u   root    -p
+C:\MySQL55\bin>mysql user 유저  암호
+Enter password:12345
+
+mysql> exit
+mysql> ctrl + c  서버 죽인다
+---------------------------------
+■. DataBase 만들기
+    create database mydb2;
+
+■. Database들 보기
+    show databases;
+
+■. DataBase 삭제
+    drop database mydb2;
+
+■. DataBase 사용
+    use mydb;
+
+---------------------------------
+■. table들 보기 
+    show tables;
+
+■. table 구조 보기
+    desc board;
+
+    select *
+    from board;
+
+--------------------------------------
+
+■. 자료형
+
+int : 정수
+varchar 문자열 (자바 String)
+char 문자열 (배열)
+date 날짜
+datetime 날짜 시간
+text 문자열 (메모장크기) *****
+
+
+-----------------------------------------
+
+
+■ test 테이블 만들기 형식
+
+create table 테이블 이름(
+  필드명 자료형(크기) not null
+  필드명 자료형(크기) 
+);
+
+■ test 테이블 만들기
+
+create table member(
+  id varchar(20) not null primary key, #*** primary key는 중복되면 안됨: id, 주민번호, 학번 등
+  pw varchar(20) not null,
+  name varchar(30) not null,
+  tel varchar(14) not null,
+  addr varchar(50) not null,
+  regdate date
+);
+
+
+desc member;
+
+면접
+■. CRUD: create(insert), read(select), update, delete
+
+■. insert : 데이터 입력 형식
+
+- 원하는 값만 insert 할 때
+insert into table 이름 (필드명,필드명,,)
+values('문자열',숫자,,,);
+
+- 모든 값을 insert 할 때
+insert into table 이름
+values('문자열', 숫자);
+
+
+insert into member(id, pw, name, tel, addr) #***not null 지정해 준 형식은 무조건 insert 할 것
+values('kim', 'k123', '김길동', '01023235656', '서울 강남구');
+
+
+select * from member;
+
+-------------------------------------------------------------------------------
+
+insert into member
+values('lee', 'l123', '이길동', '01045457878', '서울 강동구', NOW());
+
+-------------------------------------------------------------------------------
+
+insert into member
+values('lee', 'l678', '이효리', '01044445555', '제주 제주시', NOW()); 
+#*** primary key는 중복되면 안됨 - 상단 lee와 중복: Duplicate entry 출력
+
+insert into member
+values('lee2', 'l678', '이효리', '01044445555', '제주 제주시', NOW()); 
+
+insert into member
+values('lee12', 'l678', '이효리', '01044445555', '제주 제주시', NOW()); 
+
+-------------------------------------------------------------------------------
+
+insert into member
+values('lee3', 'l123', '이순신', '01011112222', '서울 영등포구', NOW());
+
+insert into member
+values('park', 'p123', '박문수', '01033331111', '서울 영등포구', NOW());
+
+insert into member
+values('an', 'a123', '안미숙', '01022335511', '서울 강남구', NOW());
+
+insert into member
+values('park2', 'p123', '박은빈', '01088998989', '서울 강남구', NOW());
+
+
+■. select : 데이터 검색 형식
+
+select 필드명, 필드명.. from 테이블명;
+
+select * from 테이블이름;
+
+select 필드명, 필드명...
+from 테이블명
+where 조건
+order by 키필드 desc, 키필드 asc;
+
+>>where 조건
+    where  name = '홍길동'
+    where name like '%이%'; #'이' 가 포함된 자료 검색
+    where addr like '%강남%'; # '강남' 이 포함된 자료 검색
+
+>>order by 키필드 desc, 키필드 asc;
+    oredr by name asc; # asc (오름차순 = 순서대로 출력)
+    order by regdate desc; # desc (내림차순 = 역순으로 출력)
+    asc는 생략 가능
+
+>> 실습
+
+select id, name, addr
+from member;
+
+-> : id, name, addr 만 검색
+
+select *
+from member;
+
+문제 1 ) 이효리를 검색하세요.
+select * from member where name ='이효리' ;
+
+
+문제 2 ) name에 '이'가 포함된 자료를 검색하시오
+select * from member where name like '%이%';
+
+문제 3 ) 주소에 '강남'이 포함된 자료를 검색하시오
+select * from member where addr like '%강남%';
+
+문제 4 ) name, addr 만 검색 -> name 오름차순 , addr 내림차순 정렬
+
+select name, addr
+from member
+order by name asc, addr desc;
+
+문제 5 ) name에 lee가 포함된 자료 검색해서 name 순으로 오름차순 정렬하시오
+
+select * from member 
+where name like '%이%'
+order by name asc;
+
+
+■. update : 데이터 수정 ( *** where 조건 필수)
+
+>> 형식
+update 테이블이름 set 필드명 = '문자열', 필드명=숫자 (숫자면 ' ' 생략) where 조건;
+
+문제1 ) id 가 lee12 인 이름을 이상순으로 수정하십쇼
+update member set name = '이효리' where id = 'lee7';
+select * from member;
+
+문제2 ) id 가 lee12 인 사람의 주소를 '서울 종로구' 로 수정하시오
+update member set addr = '서울 종로구' where id = 'lee12';
+
+
+■. delete : 데이터 삭제 ( ***where 조건 필수)
+
+>> 형식
+    delete from 테이블명 where 조건;
+
+문제1 ) id가 'lee12' 자료를 삭제하시오
+
+delete from member where id = 'lee12';
+select * from member;
+

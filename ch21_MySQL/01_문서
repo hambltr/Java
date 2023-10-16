@@ -1,0 +1,10 @@
+com.mysql.jdbc.Driver
+
+mysql-connector- java-5.0.8-bin. jar 를
+
+C:\Program Files\Java\jdk1.8.0_40
+\jre\1ib\ext 여기에 복사
+
+eclipse 재구동
+
+드라이버 위치 잡기
